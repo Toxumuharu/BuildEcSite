@@ -45,8 +45,7 @@
         //     var_dump($row_data);
         //     echo nl2br("\n");
         //     $count ++;
-        // }       
-
+        // }
     
         mysqli_close($link);
     }
