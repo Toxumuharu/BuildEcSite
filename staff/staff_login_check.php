@@ -53,13 +53,18 @@ if ($link) { // success to login database
     $result = mysqli_query($link, $sql);
     show_result($result);
 
-    $result_array = mysqli_fetch_assoc($result);
+    // $result_array = mysqli_fetch_assoc($result);
 
-    echo "result_allay: ";
-    foreach ($result_allay as $line){
-    echo "$line ";
-    }
-    echo nl2br("\n");
+    /* 連想配列を取得します */
+while ($row = $result->fetch_assoc()) {
+    printf("%s\n", $row["name"]);
+}
+
+    // echo "result_allay: ";
+    // foreach ($result_allay as $line){
+    // echo "$line ";
+    // }
+    // echo nl2br("\n");
 
     $result_array_name = $result_allay["name"];
     echo nl2br("result_allay_name: $result_allay_name \n");
