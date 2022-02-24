@@ -53,12 +53,9 @@ if ($link) { // success to login database
     $result = mysqli_query($link, $sql);
     show_result($result);
 
-    // $result_array = mysqli_fetch_assoc($result);
-
-    /* 連想配列を取得します */
-while ($row = $mysqli_fetch_assoc($result)) {
-    printf("%s\n", $row["name"]);
-}
+    /* 数値添字配列 */
+$row = mysqli_fetch_array($result, MYSQLI_NUM);
+printf("%s (%s)\n", $row[0], $row[1]);
 
     // echo "result_allay: ";
     // foreach ($result_allay as $line){
