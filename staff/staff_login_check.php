@@ -53,7 +53,9 @@ if ($link) { // success to login database
     $result = mysqli_query($link, $sql);
     show_result($result);
 
-    if(empty($result["code"]) === true) {
+    $followingdata = $result->fetch_assoc();
+
+    if(empty($followingdata["code"]) === true) {
         echo nl2br("true\n");
     }else{
         echo nl2br("false\n");
