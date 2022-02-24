@@ -49,13 +49,12 @@ if ($link) { // success to login database
     show_result($result);
   
 
-    if(empty($result["code"]) === true) {
+    if(empty($result["name"]) === true) {
     // if(empty($result["code"]) === true) { // if name and code
         print "入力が間違っています。<br>";
         print "<a href='staff_login.html'>戻る</a>";
         exit();
     } else {
-        // echo nl2br("session_start()\n");
         session_start();
         $_SESSION["login"] = 1;
         $_SESSION["name"] = $result["name"];
