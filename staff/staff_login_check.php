@@ -41,6 +41,11 @@ if ($link) { // success to login database
     show_sql($sql);
     $result = mysqli_query($link, $sql);
     show_result($result);
+    if(empty($result["name"]) === true) {
+        echo nl2br("true\n");
+    }else{
+        echo nl2br("false\n");
+    }
 
     if(empty($result["name"]) === true) {
     // if(empty($result["code"]) === true) { // if name and code
