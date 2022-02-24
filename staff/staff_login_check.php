@@ -48,6 +48,7 @@ if ($link) { // success to login database
         print "<a href='staff_login.html'>戻る</a>";
         exit();
     } else {
+        echo nl2br("session_start();");
         session_start();
         $_SESSION["login"] = 1;
         $_SESSION["name"] = $result["name"];
