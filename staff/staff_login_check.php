@@ -3,6 +3,7 @@
 function start_function(){
     $dbg = debug_backtrace();
     $name = $dbg["function"];
+    var_dump($dbg);
     echo nl2br("start: $name \n");
 }
 
