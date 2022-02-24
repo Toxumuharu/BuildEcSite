@@ -33,7 +33,17 @@ if ($link) { // success to login database
     $sql = "SELECT code FROM mst_staff WHERE name = '$code' AND password = '$pass'";
     echo nl2br("{$sql}");
     $result = mysqli_query($link, $sql);
-    echo "{\$result: $result}";
+    
+    if ($result)
+    {
+    // Fetch one and one row
+    while ($row=mysqli_fetch_row($result))
+        {
+        printf ("%s (%s)\n",$row[0],$row[1]);
+        }
+    }   
+
+
 
         if(empty($result["name"]) === true) {
             print "入力が間違っています。<br><br>";
