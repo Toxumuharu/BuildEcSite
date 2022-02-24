@@ -1,8 +1,8 @@
 <?php
 
 function start_function(){
-    // $dbg = debug_backtrace();
-    $name = debug_backtrace()["function"];
+    $dbg = debug_backtrace();
+    $name = $dbg["function"];
     echo nl2br("start: $name \n");
 }
 
