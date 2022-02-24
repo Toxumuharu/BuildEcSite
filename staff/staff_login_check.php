@@ -54,6 +54,8 @@ if ($link) { // success to login database
     show_result($result);
 
     $result_array = mysqli_fetch_assoc($result);
+    $result_array_name = $result_allay["name"];
+    echo nl2br("$result_allay_name");
     if(empty($result_array["name"]) === true) {
     // if(empty($result["code"]) === true) { // if name and code
         print "入力が間違っています。<br>";
