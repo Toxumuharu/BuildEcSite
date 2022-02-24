@@ -56,7 +56,7 @@ if ($link) { // success to login database
     // $result_array = mysqli_fetch_assoc($result);
 
     /* 連想配列を取得します */
-while ($row = $result->fetch_assoc()) {
+while ($row = $mysqli_fetch_assoc($result)) {
     printf("%s\n", $row["name"]);
 }
 
