@@ -33,21 +33,14 @@ $azure_mysql_connstr_match = preg_match(
     $_);
 $link = mysqli_connect($_["datasource"], $_["userid"], $_["password"], "shop");
     
-// $dsn = "mysql:host=$_["datasource"];dbname=shop;charset=utf8";
-// $user = $_["userid"];
-// $password = "";
-// $dbh = new PDO($dsn, $user, $_["password"]);
-// $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
 if ($link) { // success to login database
     $db_selected = mysqli_select_db($link, "shop");
     $sql = "SELECT name FROM mst_staff WHERE code = '$code' AND password = '$pass'";
     //$sql = "SELECT code FROM mst_staff WHERE name = '$code' AND password = '$pass'"; // if name and code
 
-    show_sql($sql);
+    // show_sql($sql);
     $result = mysqli_query($link, $sql);
-    show_result($result);
-  
+    // show_result($result);
 
     if(empty($result["name"]) === true) {
     // if(empty($result["code"]) === true) { // if name and code
