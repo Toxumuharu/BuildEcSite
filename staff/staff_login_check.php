@@ -1,9 +1,20 @@
 <?php
 
+function start_function(){
+    // $dbg = debug_backtrace();
+    $name = debug_backtrace()["function"];
+    echo nl2br("start: $name \n");
+}
+
+function end_function($name){
+    echo nl2br("end: $name \n");
+}
+
 function show_result($result){
-    echo nl2br("result: ");
+    start_function();
     print_r(mysqli_fetch_assoc($result));
     echo nl2br("\n");
+    end_function(__FUNCTION__); 
 }
 
 function show_sql($sql){
