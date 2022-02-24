@@ -22,6 +22,12 @@ $azure_mysql_connstr_match = preg_match(
     $_);
 $link = mysqli_connect($_["datasource"], $_["userid"], $_["password"], "shop");
     
+// $dsn = "mysql:host=$_["datasource"];dbname=shop;charset=utf8";
+// $user = $_["userid"];
+// $password = "";
+// $dbh = new PDO($dsn, $user, $_["password"]);
+// $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
 if ($link) { // success to login database
     $db_selected = mysqli_select_db($link, "shop");
     $sql = "SELECT name FROM mst_staff WHERE code=$code AND password=$pass";
@@ -40,37 +46,14 @@ if ($link) { // success to login database
         header("Location:staff_login_top.php");
         exit();
     }
-
+    mysqli_close($link);
 }else{
     echo nl2br("Fail to login database");
 }
-mysqli_close($link);
-
-// $sql = "SELECT name FROM mst_staff WHERE code=$code AND password=$pass";
-// $stmt = $dbh -> prepare($sql);
-// $data[] = $code;
-// $data[] = $pass;
-// $stmt -> execute($data);
-    
-// $dbh = null;
-    
-// $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
-    
-// if(empty($rec["name"]) === true) {
-//     print "入力が間違っています。<br><br>";
-//     print "<a href='staff_login.html'>戻る</a>";
-//     exit();
-// } else {
-//     session_start();
-//     $_SESSION["login"] = 1;
-//     $_SESSION["name"] = $rec["name"];
-//     $_SESSION["code"] = $code;
-//     header("Location:staff_login_top.php");
-//     exit();
-// }
 }
 catch(Exception $e) {
+    print ($e);
     print "只今障害が発生しております。<br><br>";
     print "<a href='staff_login.html'>戻る</a>";
-}
+} 
 ?>
