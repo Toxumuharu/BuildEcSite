@@ -34,21 +34,23 @@ if ($link) { // success to login database
     $result = mysqli_query($link, $sql);
     echo "{\$result: $result}";
 
-    if(empty($result["name"]) === true) {
-        print "入力が間違っています。<br><br>";
-        print "<a href='staff_login.html'>戻る</a>";
-        exit();
-    } else {
-        session_start();
-        $_SESSION["login"] = 1;
-        $_SESSION["name"] = $result["name"];
-        $_SESSION["code"] = $code;
-        header("Location:staff_login_top.php");
-        exit();
-    }
+        if(empty($result["name"]) === true) {
+            print "入力が間違っています。<br><br>";
+            print "<a href='staff_login.html'>戻る</a>";
+            exit();
+        } else {
+            session_start();
+            $_SESSION["login"] = 1;
+            $_SESSION["name"] = $result["name"];
+            $_SESSION["code"] = $code;
+            header("Location:staff_login_top.php");
+            exit();
+        }
     mysqli_close($link);
 }else{
     echo nl2br("Fail to login database");
+    $link = mysqli_connect($_["datasource"], $_["userid"], $_["password"], "shop");
+    mysqli_close($link);
 }
 }
 catch(Exception $e) {
