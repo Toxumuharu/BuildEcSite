@@ -1,4 +1,15 @@
 <?php
+
+function show_result($result){
+    echo nl2br("result: ");
+    print_r(mysqli_fetch_assoc($result));
+    echo nl2br("\n");
+}
+
+function show_sql($sql){
+  echo nl2br("{$sql}\n");
+}
+
 try {
 
 require_once("../common/common.php");
@@ -32,12 +43,11 @@ if ($link) { // success to login database
     $db_selected = mysqli_select_db($link, "shop");
     $sql = "SELECT name FROM mst_staff WHERE code = '$code' AND password = '$pass'";
     //$sql = "SELECT code FROM mst_staff WHERE name = '$code' AND password = '$pass'"; // if name and code
-    // echo nl2br("{$sql}\n"); // show sql
+
+    show_sql($sql);
     $result = mysqli_query($link, $sql);
-    
-    echo nl2br("result: ");
-    print_r(mysqli_fetch_assoc($result));
-    echo nl2br("\n");
+    show_result($result);
+  
 
     if(empty($result["code"]) === true) {
     // if(empty($result["code"]) === true) { // if name and code
