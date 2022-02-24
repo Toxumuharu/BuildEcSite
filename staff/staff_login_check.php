@@ -31,7 +31,7 @@ $link = mysqli_connect($_["datasource"], $_["userid"], $_["password"], "shop");
 if ($link) { // success to login database
     $db_selected = mysqli_select_db($link, "shop");
     $sql = "SELECT code FROM mst_staff WHERE name = '$code' AND password = '$pass'";
-    echo "{$sql}";
+    echo nl2br("{$sql}");
     $result = mysqli_query($link, $sql);
     echo "{\$result: $result}";
 
@@ -40,6 +40,7 @@ if ($link) { // success to login database
             print "<a href='staff_login.html'>戻る</a>";
             exit();
         } else {
+            echo nl2br("session_start()\n");
             session_start();
             $_SESSION["login"] = 1;
             $_SESSION["name"] = $result["name"];
