@@ -34,18 +34,23 @@ if ($link) { // success to login database
     echo nl2br("{$sql}");
     $result = mysqli_query($link, $sql);
     
-    if ($result)
-    {
-    // Fetch one and one row
-    while ($row=mysqli_fetch_row($result))
-        {
-        printf ("%s (%s)\n",$row[0],$row[1]);
-        }
-    }   
+    // if ($result)
+    // {
+    // // Fetch one and one row
+    // while ($row=mysqli_fetch_row($result))
+    //     {
+    //     printf ("%s (%s)\n",$row[0],$row[1]);
+    //     }
+    // }
+
+    echo nl2br("result:");
+    $result = mysqli_fetch_assoc($result);
+    print_r($result);
+    echo nl2br("\n");
 
 
 
-        if(empty($result["name"]) === true) {
+        if(empty($result["code"]) === true) {
             print "入力が間違っています。<br><br>";
             print "<a href='staff_login.html'>戻る</a>";
             exit();
