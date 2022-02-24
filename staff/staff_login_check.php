@@ -5,7 +5,7 @@ function start_function($name){
 }
 
 function end_function($name){
-    echo nl2br("} // $name \n");
+    echo nl2br("} // $name \n\n");
 }
 
 function show_result($result){
@@ -52,7 +52,8 @@ if ($link) { // success to login database
     show_sql($sql);
     $result = mysqli_query($link, $sql);
     show_result($result);
-    if(empty($result["name"]) === true) {
+
+    if(empty($result["code"]) === true) {
         echo nl2br("true\n");
     }else{
         echo nl2br("false\n");
