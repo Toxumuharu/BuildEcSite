@@ -1,26 +1,24 @@
 <?php
 
-function start_function(){
-    $dbg = debug_backtrace();
-    foreach($dbg as $line){
-        echo "{$line["function"]}: line {$line["line"]}";
-    }
-    // echo nl2br("start: $name \n");
+function start_function($name){
+   echo nl2br("$name {\n");
 }
 
 function end_function($name){
-    echo nl2br("end: $name \n");
+    echo nl2br("} // $name \n");
 }
 
 function show_result($result){
-    start_function();
+    start_function(__FUNCTION__);
     print_r(mysqli_fetch_assoc($result));
     echo nl2br("\n");
     end_function(__FUNCTION__); 
 }
 
 function show_sql($sql){
-  echo nl2br("{$sql}\n");
+    start_function(__FUNCTION__);
+    echo nl2br("{$sql}\n");
+    end_function(__FUNCTION__); 
 }
 
 try {
