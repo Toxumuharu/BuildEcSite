@@ -56,11 +56,11 @@ if ($link) { // success to login database
             exit();
         } else {
             echo nl2br("session_start()\n");
-            session_start();
+            // session_start();
             $_SESSION["login"] = 1;
             $_SESSION["name"] = $result["name"];
             $_SESSION["code"] = $code;
-            header("Location:staff_login_top.php");
+            // header("Location:staff_login_top.php");
             exit();
         }
     mysqli_close($link);
