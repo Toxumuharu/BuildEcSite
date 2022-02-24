@@ -53,15 +53,8 @@ if ($link) { // success to login database
     $result = mysqli_query($link, $sql);
     show_result($result);
 
-    $followingdata = $result->fetch_assoc();
-
-    if(empty($followingdata["code"]) === true) {
-        echo nl2br("true\n");
-    }else{
-        echo nl2br("false\n");
-    }
-
-    if(empty($result["name"]) === true) {
+    $result_array = mysqli_fetch_assoc($result);
+    if(empty($result_array["name"]) === true) {
     // if(empty($result["code"]) === true) { // if name and code
         print "入力が間違っています。<br>";
         print "<a href='staff_login.html'>戻る</a>";
@@ -70,7 +63,7 @@ if ($link) { // success to login database
         echo nl2br("session_start();");
         session_start();
         $_SESSION["login"] = 1;
-        $_SESSION["name"] = $result["name"];
+        $_SESSION["name"] = $result_array["name"];
         $_SESSION["code"] = $code;
         // $_SESSION["name"] = $code; // if name and code
         // $_SESSION["code"] = $result["code"]; // if name and code
