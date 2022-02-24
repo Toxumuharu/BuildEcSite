@@ -31,6 +31,7 @@ $link = mysqli_connect($_["datasource"], $_["userid"], $_["password"], "shop");
 if ($link) { // success to login database
     $db_selected = mysqli_select_db($link, "shop");
     $sql = "SELECT name FROM mst_staff WHERE code=$code AND password=$pass";
+    echo "{$sql}";
     $result = mysqli_query($link, $sql);
     echo "{\$result: $result}";
 
