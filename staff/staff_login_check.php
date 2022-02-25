@@ -55,8 +55,10 @@ if ($link) { // success to login database
 
 
 $row = mysqli_fetch_array($result);
-echo "row[name]";
-var_dump($row["name"]); 
+// echo "row[name]";
+echo "mysqli_fetch_array(\$result)";
+var_dump(mysqli_fetch_array($result)); 
+echo nl2br("\n");
 
 
 
@@ -66,8 +68,6 @@ var_dump($row["name"]);
     // }
     // echo nl2br("\n");
 
-    $result_array_name = $result_allay["name"];
-    echo nl2br("result_allay_name: $result_allay_name \n");
     if(empty($result_array["name"]) === true) {
     // if(empty($result["code"]) === true) { // if name and code
         print "入力が間違っています。<br>";
@@ -81,7 +81,7 @@ var_dump($row["name"]);
         $_SESSION["code"] = $code;
         // $_SESSION["name"] = $code; // if name and code
         // $_SESSION["code"] = $result["code"]; // if name and code
-        header("Location:staff_login_top.php");
+        // header("Location:staff_login_top.php");
         exit();
     }
     mysqli_close($link);
