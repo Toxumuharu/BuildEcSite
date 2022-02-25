@@ -13,8 +13,8 @@
 
     $link = mysqli_connect($_["datasource"], $_["userid"], $_["password"], $_["database"]);
 
-    print "リンク集";
-    print "<a href='staff_login.html'>サインイン画面</a>";
+    echo nl2br("リンク集\n");
+    echo nl2br("<a href='staff_login.html'>サインイン画面</a>\n");
 
     if ($link) {
         $db_selected = mysqli_select_db($link, $_["database"]);
