@@ -49,7 +49,7 @@ if ($link) { // success to login database
     $sql = "SELECT name FROM mst_staff WHERE code = '$code' AND password = '$pass'";
     //$sql = "SELECT code FROM mst_staff WHERE name = '$code' AND password = '$pass'"; // if name and code
 
-    // show_sql($sql);
+    show_sql($sql);
     $result = mysqli_query($link, $sql);
     // show_result($result);
 
