@@ -75,6 +75,12 @@ foreach ($row as $line){
 }
 echo nl2br("\n");
 
+echo "result: "
+foreach($result as $value){
+    echo $value;
+    echo " ";
+   }
+   echo nl2br("\n");
 
     // echo "result_allay: ";
     // foreach ($result_allay as $line){
