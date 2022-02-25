@@ -54,10 +54,10 @@ if ($link) { // success to login database
     show_result($result);
 
 
-$row = mysqli_fetch_array($result);
+$row = mysqli_fetch_assoc($result);
 // echo "row[name]";
 echo "(\$result)";
-var_dump($result); 
+var_dump($row); 
 echo nl2br("\n");
 
 
