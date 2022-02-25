@@ -60,6 +60,9 @@ echo "(\$result)";
 var_dump($row); 
 echo nl2br("\n");
 
+echo "(\$result)";
+var_export($row);
+echo nl2br("\n");
 
 
     // echo "result_allay: ";
