@@ -16,8 +16,6 @@
     print "リンク集";
     print "<a href='staff_login.html'>サインイン画面</a>";
 
-
-
     if ($link) {
         $db_selected = mysqli_select_db($link, $_["database"]);
     
