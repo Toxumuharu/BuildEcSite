@@ -77,10 +77,15 @@ echo nl2br("\n");
 
 echo "result: ";
 foreach($result as $value){
-    echo $value;
+    echo $value;            
     echo " ";
-   }
-   echo nl2br("\n");
+}
+echo nl2br("\n");
+
+$name = "name";
+echo $row[$name];
+echo nl2br("\n");
+
 
     // echo "result_allay: ";
     // foreach ($result_allay as $line){
