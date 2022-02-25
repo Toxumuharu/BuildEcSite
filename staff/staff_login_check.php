@@ -49,15 +49,15 @@ if ($link) { // success to login database
     $sql = "SELECT name FROM mst_staff WHERE code = '$code' AND password = '$pass'";
     //$sql = "SELECT code FROM mst_staff WHERE name = '$code' AND password = '$pass'"; // if name and code
 
-    show_sql($sql);
+    // show_sql($sql);
     $result = mysqli_query($link, $sql);
-    show_result($result);
+    // show_result($result);
 
 
 $row = mysqli_fetch_array($result);
 // echo "row[name]";
-echo "mysqli_fetch_array(\$result)";
-var_dump(mysqli_fetch_array($result)); 
+echo "(\$result)";
+var_dump($result); 
 echo nl2br("\n");
 
 
