@@ -51,7 +51,7 @@ if ($link) { // success to login database
 
     show_sql($sql);
     $result = mysqli_query($link, $sql);
-    // show_result($result);
+    show_result($result);
 
 
 $row = mysqli_fetch_array($result);
