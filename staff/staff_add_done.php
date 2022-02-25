@@ -32,6 +32,18 @@ $post = sanitize($_POST);
 $name = $post["name"];
 $pass = $post["pass"];
 
+// azure database login
+$azure_mysql_connstr = $_SERVER["MYSQLCONNSTR_localdb"];
+$azure_mysql_connstr_match = preg_match(
+    "/".
+    "Database=(?<database>.+);".
+    "Data Source=(?<datasource>.+);".
+    "User Id=(?<userid>.+);".
+    "Password=(?<password>.+)".
+    "/u",
+    $azure_mysql_connstr,
+    $_);
+
 $dsn = "mysql:host={$_["datasource"]};dbname=shop;charset=utf8";
 $user = $_["userid"];
 $password = $_["password"];
@@ -49,6 +61,7 @@ $dbh = null;
         
 }
 catch(Exception $e) {
+print_r($e);    
     print "只今障害が発生しております。<br><br>";
     print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
 }
