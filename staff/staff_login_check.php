@@ -75,7 +75,7 @@ foreach ($row as $line){
 }
 echo nl2br("\n");
 
-echo "result: "
+echo "result: ";
 foreach($result as $value){
     echo $value;
     echo " ";
