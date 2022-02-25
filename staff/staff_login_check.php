@@ -68,6 +68,14 @@ echo nl2br("row[name]: ");
 echo $row["name"];
 echo nl2br("\n");
 
+echo "row: ";
+foreach ($row as $line){
+    echo $line;
+    echo " ";
+}
+echo nl2br("\n");
+
+
     // echo "result_allay: ";
     // foreach ($result_allay as $line){
     // echo "$line ";
