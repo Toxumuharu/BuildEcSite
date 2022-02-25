@@ -64,7 +64,7 @@ echo "(\$result)";
 var_export($row);
 echo nl2br("\n");
 
-echo nl2br("\n");
+echo nl2br("row[name]: ");
 echo $row["name"];
 echo nl2br("\n");
 
