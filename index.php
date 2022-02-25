@@ -12,6 +12,12 @@
       $_);        
 
     $link = mysqli_connect($_["datasource"], $_["userid"], $_["password"], $_["database"]);
+
+    print "リンク集";
+    print "<a href='staff_login.html'>サインイン画面</a>";
+
+
+
     if ($link) {
         $db_selected = mysqli_select_db($link, $_["database"]);
     
@@ -19,22 +25,15 @@
         $result_flag = mysqli_query($link, $sql);
     
         if ($result_flag) {
-            echo nl2br("成功しました\n");
+            // echo nl2br("成功しました\n");
 
             $result = mysqli_query($link, 'SELECT count(*) as count from Access');  
             $row = mysqli_fetch_assoc($result);
-            print("アクセス数: ". $row["count"]); 
-            echo nl2br("\n");
+            // print("アクセス数: ". $row["count"]); 
+            // echo nl2br("\n");
         } else {
             die('INSERTクエリーが失敗しました。'.mysqli_error($link));
         }
-
-        // // show value of $_
-        // foreach ($_ as &$value){
-        //     echo nl2br("{$value} ");            
-        // }
-        // echo nl2br("\n");
-
         // // add test
         // $sql = "SELECT * FROM access";
         // $result = mysqli_query($link, $sql);
@@ -46,7 +45,6 @@
         //     echo nl2br("\n");
         //     $count ++;
         // }
-    
         mysqli_close($link);
     }
     else {
