@@ -64,6 +64,9 @@ echo "(\$result)";
 var_export($row);
 echo nl2br("\n");
 
+echo nl2br("\n");
+echo $row["name"];
+echo nl2br("\n");
 
     // echo "result_allay: ";
     // foreach ($result_allay as $line){
