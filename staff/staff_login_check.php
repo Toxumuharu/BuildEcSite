@@ -42,18 +42,20 @@ $azure_mysql_connstr_match = preg_match(
     "/u",
     $azure_mysql_connstr,
     $_);
-$link = mysqli_connect($_["datasource"], $_["userid"], $_["password"], "shop");
     
 $dsn = "mysql:host={$_["datasource"]};dbname=shop;charset=utf8";
 $user = $_["userid"];
 $password = $_["password"];
+
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 $sql = "SELECT name FROM mst_staff WHERE code=? AND password=?";
 $stmt = $dbh -> prepare($sql);
 $data[] = $code;
 $data[] = $pass;
 $stmt -> execute($data);
+
 $dbh = null;
 $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 
@@ -62,48 +64,12 @@ if(empty($rec["name"]) === true) {
     print "<a href='staff_login.html'>戻る</a>";
     exit();
 } else {
-    echo nl2br("session_start();");
-
     session_start();
     $_SESSION["login"] = 1;
     $_SESSION["name"] = $rec["name"];
     $_SESSION["code"] = $code;
     header("Location:staff_login_top.php");
     exit();
-}
-
-    
-if ($link) { // success to login database
-    $db_selected = mysqli_select_db($link, "shop");
-    $sql = "SELECT name FROM mst_staff WHERE code = '$code' AND password = '$pass'";
-    //$sql = "SELECT code FROM mst_staff WHERE name = '$code' AND password = '$pass'"; // if name and code
-
-    show_sql($sql);
-    $result = mysqli_query($link, $sql);
-    show_result($result);
-    $result_array = mysqli_fetch_assoc($result);    
-
-    if(empty($result_array["name"]) === true) {
-    // if(empty($result["code"]) === true) { // if name and code
-        print "入力が間違っています。<br>";
-        print "<a href='staff_login.html'>戻る</a>";
-        exit();
-    } else {
-        echo nl2br("session_start();");
-        session_start();
-        $_SESSION["login"] = 1;
-        $_SESSION["name"] = $result_array["name"];
-        $_SESSION["code"] = $code;
-        // $_SESSION["name"] = $code; // if name and code
-        // $_SESSION["code"] = $result["code"]; // if name and code
-        // header("Location:staff_login_top.php");
-        exit();
-    }
-    mysqli_close($link);
-}else{
-    echo nl2br("Fail to login database");
-    $link = mysqli_connect($_["datasource"], $_["userid"], $_["password"], "shop");
-    mysqli_close($link);
 }
 
 }catch(Exception $e) {
