@@ -52,60 +52,7 @@ if ($link) { // success to login database
     show_sql($sql);
     $result = mysqli_query($link, $sql);
     show_result($result);
-
-    while ($row = mysqli_fetch_assoc($results)) {
-        echo "a";
-        echo 'name: ' . $row['name'] .PHP_EOL;
-    }
-    echo nl2br("\n");
-
-    echo "name: ";
-echo $row['name'];
-echo nl2br("\n");
-
-  
-while ($row = mysqli_fetch_row($result)) {
-    printf ("%s %s<br>", $row[0], $row[1]);
-} 
-
-// $row = mysqli_fetch_assoc($result);
-// // echo "row[name]";
-// echo "(\$result)";
-// var_dump($row); 
-// echo nl2br("\n");
-
-// echo "(\$result)";
-// var_export($row);
-// echo nl2br("\n");
-
-// echo nl2br("row[name]: ");
-// echo $row["name"];
-// echo nl2br("\n");
-
-// echo "row: ";
-// foreach ($row as $line){
-//     echo $line;
-//     echo " ";
-// }
-// echo nl2br("\n");
-
-// echo "result: ";
-// foreach($result as $value){
-//     echo $value;            
-//     echo " ";
-// }
-// echo nl2br("\n");
-
-// $name = "name";
-// echo $row[$name];
-// echo nl2br("\n");
-
-
-    // echo "result_allay: ";
-    // foreach ($result_allay as $line){
-    // echo "$line ";
-    // }
-    // echo nl2br("\n");
+    $result_array = mysqli_fetch_assoc($result);
 
     if(empty($result_array["name"]) === true) {
     // if(empty($result["code"]) === true) { // if name and code
