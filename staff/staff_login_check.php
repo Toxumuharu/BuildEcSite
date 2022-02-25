@@ -59,6 +59,10 @@ if ($link) { // success to login database
     }
     echo nl2br("\n");
 
+    echo "name: ";
+echo $row['name'];
+echo nl2br("\n");
+
 // $row = mysqli_fetch_assoc($result);
 // // echo "row[name]";
 // echo "(\$result)";
