@@ -63,6 +63,11 @@ if ($link) { // success to login database
 echo $row['name'];
 echo nl2br("\n");
 
+  
+while ($row = mysqli_fetch_row($result)) {
+    printf ("%s %s<br>", $row[0], $row[1]);
+} 
+
 // $row = mysqli_fetch_assoc($result);
 // // echo "row[name]";
 // echo "(\$result)";
