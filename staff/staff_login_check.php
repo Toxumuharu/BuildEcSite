@@ -54,8 +54,10 @@ if ($link) { // success to login database
     show_result($result);
 
     while ($row = mysqli_fetch_assoc($results)) {
+        echo "a";
         echo 'name: ' . $row['name'] .PHP_EOL;
     }
+    echo nl2br("\n");
 
 // $row = mysqli_fetch_assoc($result);
 // // echo "row[name]";
