@@ -73,11 +73,11 @@ print "<input type='submit' name='delete' value='削除'>";
 }
 catch(Exception $e) {
     print "只今障害が発生しております。<br><br>";
-    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "<a href='../staff/staff_login.html'>ログイン画面へ</a>";
 }
 ?>
 <br><br>
-<a href="../staff_login/staff_login_top.php">管理画面TOPへ</a>
+<a href="../staff/staff_login_top.php">管理画面TOPへ</a>
     
 </body>
 </html>
