@@ -24,7 +24,7 @@ if(isset($_SESSION["login"]) === false) {
 <body>
     
 商品を選択して下さい<br><br>
-<a href="product_list.php">商品一覧へ</a>
+<a href="pro_list.php">商品一覧へ</a>
 
 </body>
 </html>

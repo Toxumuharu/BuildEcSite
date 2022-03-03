@@ -8,37 +8,37 @@ if(isset($_SESSION["login"]) === false) {
 }
 
 if(isset($_POST["add"]) === true) {
-    header("Location:product_add.php");
+    header("Location:pro_add.php");
     exit();
 }
 
 if(isset($_POST["disp"]) === true) {
     if(isset($_POST["code"]) === false) {
-        header("Location:product_ng.php");
+        header("Location:pro_ng.php");
         exit();
     } 
     $code = $_POST["code"];
-    header("Location:product_disp.php?code=".$code);
+    header("Location:pro_disp.php?code=".$code);
     exit();
 }
 
 if(isset($_POST["edit"]) === true) {
     if(isset($_POST["code"]) === false) {
-        header("Location:product_ng.php");
+        header("Location:pro_ng.php");
         exit();
     } 
     $code = $_POST["code"];
-    header("Location:product_edit.php?code=".$code);
+    header("Location:pro_edit.php?code=".$code);
     exit();
 }
 
 if(isset($_POST["delete"]) === true) {
     if(isset($_POST["code"]) === false) {
-        header("Location:product_ng.php");
+        header("Location:pro_ng.php");
         exit();
     } 
     $code = $_POST["code"];
-    header("Location:product_delete.php?code=".$code);
+    header("Location:pro_delete.php?code=".$code);
     exit();
 }
 ?>
