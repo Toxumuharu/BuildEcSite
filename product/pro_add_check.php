@@ -51,7 +51,7 @@ if(preg_match("/\A[0-9]+\z/", $price) === 0) {
 }
     
 if($gazou["size"] > 0) {
-    if($gazou["size"] > 1000000) {
+    if($gazou["size"] > 2000000) {
         print "ファイルのサイズが大きすぎます。<br><br>";
     } else {
         move_uploaded_file($gazou["tmp_name"],"./gazou/".$gazou["name"]);
