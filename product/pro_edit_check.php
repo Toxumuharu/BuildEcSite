@@ -51,7 +51,7 @@ if(preg_match("/\A[0-9]+\z/", $price) === 0) {
 }
     
 if($gazou["size"] > 0) {
-    if($gazou["size"] > 1000000) {
+    if($gazou["size"] > 10000000) {
         print "ファイルのサイズが大きすぎます。<br><br>";
     } else {
         move_uploaded_file($gazou["tmp_name"],"./gazou/".$gazou["name"]);
@@ -84,7 +84,7 @@ if(mb_strlen($comments) > 100) {
 }
 
     
-if(empty($name) or preg_match("/\A[0-9]+\z/", $price) === 0 or $gazou["size"] > 1000000 or empty($comments) === true or mb_strlen($comments) > 100) {
+if(empty($name) or preg_match("/\A[0-9]+\z/", $price) === 0 or $gazou["size"] > 10000000 or empty($comments) === true or mb_strlen($comments) > 100) {
     print "<form>";
     print "<input type='button' onclick='history.back()' value='戻る'>";
     print "</form>";
