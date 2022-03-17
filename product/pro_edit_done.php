@@ -90,7 +90,7 @@ catch(Exception $e) {
 ?>
     
 商品を修正しました。<br><br>
-<a href="product_list.php">商品一覧へ</a>
+<a href="pro_list.php">商品一覧へ</a>
 
 </body>
 </html>
