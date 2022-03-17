@@ -73,7 +73,7 @@ catch(Exception $e) {
 <?php print $rec["code"];?>
  の情報を修正します。
 <br><br>
-<form action="product_edit_check.php" method="post" enctype="multipart/form-data">
+<form action="pro_edit_check.php" method="post" enctype="multipart/form-data">
 カテゴリー<br>
 <?php require_once("../common./common.php");?>
 <?php print pulldown_cate();?>
