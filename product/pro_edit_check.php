@@ -90,7 +90,7 @@ if(empty($name) or preg_match("/\A[0-9]+\z/", $price) === 0 or $gazou["size"] > 
     print "</form>";
 } else {
     print "上記商品を修正しますか？<br><br>";
-    print "<form action='product_edit_done.php' method='post'>";
+    print "<form action='pro_edit_done.php' method='post'>";
     print "<input type='hidden' name='cate' value='".$cate."'>";
     print "<input type='hidden' name='code' value='".$code."'>";
     print "<input type='hidden' name='name' value='".$name."'>";
