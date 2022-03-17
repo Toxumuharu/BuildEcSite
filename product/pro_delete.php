@@ -86,7 +86,7 @@ catch(Exception $e) {
 <?php print $disp_gazou;?>
 <br><br>
 上記情報を削除しますか？<br><br>
-<form action="product_delete_done.php" method="post">
+<form action="pro_delete_done.php" method="post">
 <input type="hidden" name="code" value="<?php print $rec['code'];?>">
 <input type="hidden" name="gazou" value="<?php print $gazou;?>">
 <input type="button" onclick="history.back()" value="戻る">
