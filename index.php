@@ -15,6 +15,7 @@
 
     echo nl2br("リンク集\n");
     echo nl2br("<a href='./staff/staff_login.php'>- サインイン画面</a>\n");
+    echo nl2br("<a href='./shop/shop_list.php'>- ECサイトTOP</a>\n");
 
     if ($link) {
         $db_selected = mysqli_select_db($link, $_["database"]);
