@@ -4,7 +4,7 @@ session_start();
 session_regenerate_id(true);
 if(isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='staff_login.html'>ログイン画面へ</a>";
+    print "<a href='staff_login.php'>ログイン画面へ</a>";
     exit();
 } else {
     print $_SESSION["name"]."さんログイン中";
@@ -59,7 +59,7 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 }
 catch(Exception $e) {
     print "只今障害が発生しております。<br><br>";
-    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "<a href='../staff/staff_login.php'>ログイン画面へ</a>";
 }
 ?>
     

@@ -66,7 +66,7 @@ if(empty($rec["gazou"]) === true) {
 }
 catch(Exception $e) {
     print "只今障害が発生しております。<br><br>";
-    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "<a href='../staff/staff_login.php'>ログイン画面へ</a>";
 }
 ?>
 <a href="shop_cartin.php?code=<?php print $code;?>">カートに入れる</a>
