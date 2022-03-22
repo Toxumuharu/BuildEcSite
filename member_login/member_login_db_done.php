@@ -81,8 +81,10 @@ print "<a href='../shop/shop_list.php'>トップへ戻る</a>";
 }
 }
 catch(Exception $e) {
-   print "只今障害が発生しております。";
-   print "a href='member_login.php'>ログインページへ戻る</a>";
+    print $e->getMessage();
+    print "<br>";
+    print "只今障害が発生しております。";
+    print "<a href='member_login.php'>ログインページへ戻る</a>";
    exit();
 }
 ?>
