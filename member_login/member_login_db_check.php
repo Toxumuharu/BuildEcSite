@@ -64,7 +64,7 @@ if($okflag === false) {
     print $email."<br><br>";
     print $address."<br><br>";
     print $tel."<br><br>";
-    print "<form action='menber_login_db_done.php' method='post'>";
+    print "<form action='member_login_db_done.php' method='post'>";
     print "<input type='hidden' name='name' value='".$name."'>";
     print "<input type='hidden' name='email' value='".$email."'>";
     print "<input type='hidden' name='address' value='".$address."'>";

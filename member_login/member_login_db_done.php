@@ -43,7 +43,7 @@ $password = $_["password"];
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-$sql = "SELECT email FROM menber WHERE1";
+$sql = "SELECT email FROM member WHERE1";
 $stmt = $dbh -> prepare($sql);
 $stmt -> execute();
         
@@ -61,10 +61,10 @@ if(empty($mail) === true) {
         
 if(in_array($email, $mail) === true) {
     print "すでに使われているmailアドレスです。<br><br>";
-    print "<a href='menber_login_db.php'>トップへ戻る</a>";
+    print "<a href='member_login_db.php'>トップへ戻る</a>";
     $dbh = null;
 } else {   
-$sql = "INSERT INTO menber(name, email, address, tel, password) VALUES(?,?,?,?,?)";
+$sql = "INSERT INTO member(name, email, address, tel, password) VALUES(?,?,?,?,?)";
 $stmt = $dbh -> prepare($sql);
 $data[] = $name;
 $data[] = $email;
@@ -82,7 +82,7 @@ print "<a href='../shop/shop_list.php'>トップへ戻る</a>";
 }
 catch(Exception $e) {
    print "只今障害が発生しております。";
-   print "a href='menber_login.php'>ログインページへ戻る</a>";
+   print "a href='member_login.php'>ログインページへ戻る</a>";
    exit();
 }
 ?>

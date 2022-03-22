@@ -3,11 +3,11 @@
 session_start();
 session_regenerate_id(true);
 
-if(isset($_SESSION["menber_login"]) === true) {
+if(isset($_SESSION["member_login"]) === true) {
 print "ようこそ";
-    print $_SESSION["menber_name"];
+    print $_SESSION["member_name"];
     print "様　";
-    print "<a href='../menber_login/menber_logout.php'>ログアウト</a>";
+    print "<a href='../member_login/member_logout.php'>ログアウト</a>";
     print "<br><br>";
 }
 

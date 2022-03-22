@@ -12,7 +12,7 @@
 新規会員登録画面<br><br>
 
 お名前<br>
-<form action="menber_login_db_check.php" method="post">
+<form action="member_login_db_check.php" method="post">
 <input type="text" name="name">
 <br>
 email<br>
