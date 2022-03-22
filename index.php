@@ -14,8 +14,10 @@
     $link = mysqli_connect($_["datasource"], $_["userid"], $_["password"], $_["database"]);
 
     echo nl2br("リンク集\n");
-    echo nl2br("<a href='./staff/staff_login.php'>- サインイン画面</a>\n");
+    echo nl2br("<a href='./staff/staff_login.php'>- 管理者サインイン画面</a>\n");
     echo nl2br("<a href='./shop/shop_list.php'>- ECサイトTOP</a>\n");
+    echo nl2br("<a href='./member_login/member_login_db.php'>- 新規ユーザー登録</a>\n");
+    echo nl2br("<a href='./member_login/member_login.php'>- ユーザーサインイン画面</a>\n");
 
     if ($link) {
         $db_selected = mysqli_select_db($link, $_["database"]);
