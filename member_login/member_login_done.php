@@ -52,7 +52,7 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
         
 if(empty($rec["name"]) === true) {
     print "ログイン情報が間違っています。<br>";
-    print "<a href='member_login.html'>戻る</a>";
+    print "<a href='member_login.php'>戻る</a>";
     exit();
 } 
 session_start();
