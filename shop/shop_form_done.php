@@ -147,7 +147,7 @@ $header = "From:".$email;
 $honbun = html_entity_decode($honbun, ENT_QUOTES, "UTF-8");
 mb_language("Japanese");
 mb_internal_encoding("UTF-8");
-mb_send_mail("hellnear@kmail.com", $title, $honbun, $header);
+mb_send_mail($email, $title, $honbun, $header);
 }
 
 catch(Exception $e) {
