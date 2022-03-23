@@ -151,6 +151,8 @@ mb_send_mail("hellnear@kmail.com", $title, $honbun, $header);
 }
 
 catch(Exception $e) {
+    print $e->getMessage();
+    print "<br>";
     print "只今障害により大変ご迷惑をおかけしております。";
     exit();
 }
