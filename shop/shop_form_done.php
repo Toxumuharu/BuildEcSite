@@ -138,16 +138,17 @@ print nl2br($honbun);
 $title = "ご注文ありがとうございました。";
 $header = "From:hellnear@kmail.com";
 $honbun = html_entity_decode($honbun, ENT_QUOTES, "UTF-8");
+$from = "toxumuharudev@toxumuharudev.work";
 mb_language("Japanese");
 mb_internal_encoding("UTF-8");
-mb_send_mail($email, $title, $honbun, $header);
+mb_send_mail($email, $title, $honbun, $header, "-f $from");
         
 $title = "お客様よりご注文が入りました。";
 $header = "From:".$email;
 $honbun = html_entity_decode($honbun, ENT_QUOTES, "UTF-8");
 mb_language("Japanese");
 mb_internal_encoding("UTF-8");
-mb_send_mail($email, $title, $honbun, $header);
+mb_send_mail("toxumuharudev@toxumuharudev.work", $title, $honbun, $header,  "-f $from");
 }
 
 catch(Exception $e) {
