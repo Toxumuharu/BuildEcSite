@@ -61,7 +61,7 @@ if (isset($_SESSION["login"]) === false) {
 
         $dbh = null;
     } catch (Exception $e) {
-        // print_r($e);
+        echo $e;
         print "只今障害が発生しております。<br><br>";
         print "<a href='../staff/staff_login.php'>ログイン画面へ</a>";
     }
