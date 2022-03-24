@@ -5,7 +5,7 @@ session_regenerate_id(true);
 
     if(isset($_SESSION["member_login"]) === false) {
     print "ログインしてく下さい。<br><br>";
-    print "<a href='../member_login/member_login.html'>ログイン画面へ<br><br></a>";
+    print "<a href='../member_login/member_login.php'>ログイン画面へ<br><br></a>";
     print "<a href='shop_list.php'>TOP画面へ</a>";
     exit();
 }
