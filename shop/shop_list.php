@@ -3,7 +3,7 @@ session_start();
 session_regenerate_id(true);
 
 if (isset($_SESSION["member_login"]) === true) {
-    echo '<span style="background: color #f0f0f0">';
+    echo '<span style="background: color #c8c8c8">';
     print "ようこそ";
     print $_SESSION["member_name"];
     print "様";
