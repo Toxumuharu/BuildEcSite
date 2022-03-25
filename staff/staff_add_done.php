@@ -55,7 +55,8 @@ if (isset($_SESSION["login"]) === false) {
 
         $sql = "INSERT INTO mst_staff(name, password) VALUES(?,?)";
         $stmt = $dbh->prepare($sql);
-        $data[] = $name;
+        $data[] = mb_substr($name, 0, 120, 'utf-8');
+        // $name;
         $data[] = $pass;
         $stmt->execute($data);
 
