@@ -15,13 +15,11 @@
     session_regenerate_id(true);
 
     if (isset($_SESSION["member_login"]) === true) {
-        print "ようこそ";
-
         print "<div class='p-3 mb-2 bg-primary text-white'>";
+        print "ようこそ";
         print $_SESSION["member_name"];
         print "様";
         print "</div>";
-
         print "<a href='../member_login/member_logout.php'>ログアウト</a>";
         print "<br><br>";
     }
