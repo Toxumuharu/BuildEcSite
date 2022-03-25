@@ -46,7 +46,7 @@ if (isset($_SESSION["login"]) === false) {
             $_
         );
 
-        $dsn = "mysql:host={$_["datasource"]};dbname=shop;charset=utf8mb4_general_ci";
+        $dsn = "mysql:host={$_["datasource"]};dbname=shop;charset=utf8mb4";
         $user = $_["userid"];
         $password = $_["password"];
 
