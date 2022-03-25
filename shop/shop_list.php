@@ -3,10 +3,11 @@ session_start();
 session_regenerate_id(true);
 
 if (isset($_SESSION["member_login"]) === true) {
-    echo '<span style="background: color #f0f0f0">' . $i . '</span> ';
+    echo '<span style="background: color #f0f0f0">';
     print "ようこそ";
     print $_SESSION["member_name"];
     print "様";
+    echo '</span>';
     print "<a href='../member_login/member_logout.php'>ログアウト</a>";
     print "<br><br>";
 }
