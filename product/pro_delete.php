@@ -24,6 +24,7 @@
     } else {
         print $_SESSION["name"] . "さんログイン中";
         print "<p class='text-primary'>.text-primary</p>";
+        print "<div class='p-3 mb-2 bg-primary text-white'>.bg-primary</div>";
 
         print "<br><br>";
     }
