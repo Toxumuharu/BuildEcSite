@@ -46,26 +46,22 @@ if (isset($_SESSION["login"]) === false) {
             $_
         );
 
-        $dsn = "mysql:host={$_["datasource"]};dbname=shop;charset=utf8mb4";
+        $dsn = "mysql:host={$_["datasource"]};dbname=shop;charset=utf8";
         $user = $_["userid"];
         $password = $_["password"];
-
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "INSERT INTO mst_staff(name, password) VALUES(?,?)";
         $stmt = $dbh->prepare($sql);
-        // $data[] = mb_substr($name, 0, 120, 'utf-8');
         $data[] = $name;
         $data[] = $pass;
         $stmt->execute($data);
 
         $dbh = null;
     } catch (Exception $e) {
-        echo $e;
         print "只今障害が発生しております。<br><br>";
-        print "<a href='../staff/staff_login.php'>ログイン画面へ</a>";
-        exit();
+        print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
     }
     ?>
 
