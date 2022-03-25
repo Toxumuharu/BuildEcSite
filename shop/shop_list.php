@@ -1,26 +1,30 @@
-<?php
-session_start();
-session_regenerate_id(true);
-
-if (isset($_SESSION["member_login"]) === true) {
-    print "ようこそ";
-    print $_SESSION["member_name"];
-    print "様";
-    print "<a href='../member_login/member_logout.php'>ログアウト</a>";
-    print "<br><br>";
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <title>ECサイトTOP</title>
-    <link rel="stylesheet" href="../style.css">
+    <!-- <link rel="stylesheet" href="../style.css"> -->
+    <?php
+    session_start();
+    session_regenerate_id(true);
+
+    if (isset($_SESSION["member_login"]) === true) {
+        print "ようこそ";
+        print $_SESSION["member_name"];
+        print "様";
+        print "<a href='../member_login/member_logout.php'>ログアウト</a>";
+        print "<br><br>";
+    }
+
+    ?>
 </head>
+
 
 <body>
 
