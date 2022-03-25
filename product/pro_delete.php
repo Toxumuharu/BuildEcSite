@@ -23,6 +23,8 @@
         exit();
     } else {
         print $_SESSION["name"] . "さんログイン中";
+        print "<p class='text-primary'>.text-primary</p>";
+
         print "<br><br>";
     }
     ?>
