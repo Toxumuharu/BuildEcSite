@@ -46,7 +46,7 @@ if (isset($_SESSION["login"]) === false) {
             $_
         );
 
-        $dsn = "mysql:host={$_["datasource"]};dbname=shop;charset=utf8";
+        $dsn = "mysql:host={$_["datasource"]};dbname=shop;charset=utf8mb4";
         $user = $_["userid"];
         $password = $_["password"];
 
@@ -55,8 +55,8 @@ if (isset($_SESSION["login"]) === false) {
 
         $sql = "INSERT INTO mst_staff(name, password) VALUES(?,?)";
         $stmt = $dbh->prepare($sql);
-        $data[] = mb_substr($name, 0, 120, 'utf-8');
-        // $name;
+        // $data[] = mb_substr($name, 0, 120, 'utf-8');
+        $data[] = $name;
         $data[] = $pass;
         $stmt->execute($data);
 
