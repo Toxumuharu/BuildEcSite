@@ -9,6 +9,7 @@ if (isset($_SESSION["login"]) === false) {
    print $_SESSION["name"] . "さんログイン中";
    print "<br><br>";
 }
+// comment
 ?>
 
 <!DOCTYPE html>
