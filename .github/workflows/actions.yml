@@ -17,5 +17,5 @@ jobs:
         server: files.000webhost.com
         username: buildecsite
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /public_html
+        server-dir: /public_html/
         local-dir: ./
